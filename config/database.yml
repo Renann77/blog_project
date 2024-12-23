@@ -39,3 +39,22 @@ production:
     <<: *default
     database: storage/production_cable.sqlite3
     migrations_paths: db/cable_migrate
+    
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: blog_project_development
+
+test:
+  <<: *default
+  database: blog_project_test
+
+production:
+  <<: *default
+  database: blog_project_production
+  username: blog_project
+  password: <%= ENV['BLOG_PROJECT_DATABASE_PASSWORD'] %>
