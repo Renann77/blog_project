@@ -1,0 +1,14 @@
+Posts
+
+
+  <% @posts.each do |post| %>
+    
+      <%= link_to post.title, post_path(post) %>
+      
+        Por <%= post.user.username %> em <%= l post.created_at, format: :long %>
+      
+      
+        <%= truncate(post.content, length: 200) %>
+      
+    
+  <% end %>
