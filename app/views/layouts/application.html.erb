@@ -12,6 +12,31 @@
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+
+  
+    
+      <%= link_to 'Home', root_path %>
+      <% if user_signed_in? %>
+        <%= link_to 'Novo Post', new_post_path %>
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Entrar', new_user_session_path %>
+        <%= link_to 'Registrar', new_user_registration_path %>
+      <% end %>
+    
+
+    
+      <% flash.each do |name, msg| %>
+        
+          <%= msg %>
+        
+      <% end %>
+
+      <%= yield %>
 
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
