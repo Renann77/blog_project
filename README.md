@@ -38,7 +38,6 @@ Configuração do Ambiente
 
 Clone o repositório
 
-bashCopygit clone https://github.com/seu-usuario/blog-rails.git
 cd blog-rails
 
 Instale as dependências
