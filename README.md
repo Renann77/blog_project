@@ -45,19 +45,6 @@ Instale as dependências
 bashCopybundle install
 yarn install
 
-Configure o banco de dados
-
-bashCopy# Copie e configure o arquivo database.yml
-cp config/database.yml.example config/database.yml
-
-# Crie e configure o banco de dados
-rails db:create
-rails db:migrate
-
-Configure as variáveis de ambiente
-
-bashCopycp .env.example .env
-Configure as variáveis no arquivo .env conforme necessário
 
 Inicie o servidor de desenvolvimento
 
@@ -66,9 +53,6 @@ Acesse a aplicação em http://localhost:3000
 
 
 # Testes
-Executando os Testes
-bashCopy# Prepare o banco de dados de teste
-rails db:test:prepare
 
 # Execute todos os testes
 bundle exec rspec
